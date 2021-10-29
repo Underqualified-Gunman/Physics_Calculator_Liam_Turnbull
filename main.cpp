@@ -20,7 +20,7 @@ bool input_catcher();
 
 int main() 
 { 
-  //color definitions would go here
+  //color definitions go here
   string blue = "\x1b[34;7m";
   string reset = "\x1b[0m";
 
@@ -59,28 +59,21 @@ void display_menu()
 void calc_velocity()
 {
   double d, t,answer;
-  string string1, string2;
+  string s1, s2;
   cout << "\nEnter your measurement unit for displacment:";
-  validateString(string1);
+  validateString(s1);
   cout << "\nWhat's the displacement?:";
   d = validateDouble(d);
   cout << "\nEnter your measurement unit for time:";
-  validateString(string2);
+  validateString(s2);
   cout << "\nWhats the amount of time?:";
-
   t = validateDouble(t);
   answer = d/t; 
-  cout << "\nYour Velocity is:"<< answer << " " << string1 << "/" << string2;
+  cout << "\nYour Velocity is:"<< answer << " " << s1 << "/" << s2;
 }
-
-
-
 void calc_accelleration()
 {
-
-  // 
   //accelleration= (FINAL_VELOCITY - INITAL_VELOCITY) divided by TIME 
-  //
   //CALCULATES acceleration over interval
   double iv, fv, t,answer;
   string s1, s2;
@@ -118,11 +111,23 @@ void calc_ns2ndlaw()
 
 void calc_weight()
 {
-  
+   double m,answer;
+   const double g = 9.8;//this is the gravitational constant of earth
+  cout << "\nthis program assumes you are calculating weight on earth";
+  string s1;
+  cout << "\nEnter your measurement output:";
+  validateString(s1);
+  cout <<"\nEnter your mass:";
+  validateDouble(m);
+  answer =m*g;
+  cout << "your force is " << answer << " "<< s1; 
 }
-
 void calc_momentum()
 {
+  //p=m*v momentum calculkation
+
+
+
   
 }
 void motion_submenu()
