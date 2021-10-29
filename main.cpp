@@ -111,7 +111,7 @@ bool input_catcher()
   {
     calc_momentum();
   }
-  else if((input == !'E') & (input== !'e'))
+  else if((input == 'E')|| (input== 'e'))
   { 
 
     cout << "Why?";
