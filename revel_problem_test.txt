@@ -12,3 +12,4 @@ double dist(double a,double b)
     result = sqrt(x + y);
     return result;
 }
+// this is a wip revel problem i didn't want deleted when the auto log off feature kicks in
