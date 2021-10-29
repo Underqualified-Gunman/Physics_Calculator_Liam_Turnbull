@@ -26,10 +26,19 @@ menu mockup
 
 3 user get asked if they have any more calculations 
 4 clear the screen after user presses y/Y to continue or N/n to exit.
-5 have an input catcher method that will execute the various physics calculation functions.
+5 have an input catcher method that will branch off and then execute the various physics calculation functions.
 
 6 do while loops the above code if input_catcher returns false
 
+
+velocity mockup
+ask for displacement in meters
+ask for the amount of time in seconds
+save answers to doubles
+answer = d/t; 
+
+
+v
 
 reference for color changing
 

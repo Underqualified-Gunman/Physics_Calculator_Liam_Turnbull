@@ -44,7 +44,13 @@ void display_menu()
 
 void calc_velocity()
 {
-  
+  double d, t,answer;
+  cout << "\nWhat's the displacement?:";
+  d = validateDouble(d);
+  cout << "\nWhats the amount of time?:";
+  t = validateDouble(t);
+  answer = d/t; 
+  cout << "\nYour Velocity is:"<< answer;
 }
 
 void calc_motion()
