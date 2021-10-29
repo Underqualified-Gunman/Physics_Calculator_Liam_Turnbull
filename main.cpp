@@ -11,7 +11,7 @@ void calc_ns2ndlaw();
 void calc_weight();
 void calc_momentum();
 bool input_catcher();
-
+bool continue_prompt();
 
 int main() 
 { 
@@ -22,6 +22,7 @@ int main()
   do
   {
     display_menu();
+    continue_prompt();
     loop = input_catcher();
   }
   while(loop == true);
@@ -40,6 +41,30 @@ void display_menu()
   << "\n6. Calculate Momentum"
   << "\n9. Exit Program"
   << "\n To select an option enter a whole number between 1-6 :";
+}
+//will ask a user if they want to continue after solving a problem if yes it clears the screen then redisplays the menu.
+bool continue_prompt()
+{ 
+  char input;
+  bool continue_loop = true;
+  // is set to loop unless a valid input is entered
+  do
+  {
+  cout << "countinue Y/N?" ;
+  input
+  if(input == 'y' || input == 'Y')
+  {
+    return true;
+  }
+  else if (input == 'n' || input == 'N')
+  {
+    return false;
+  }
+  else
+  {
+    cout << "Invalid Input!";
+  }
+  }while (continue_loop == true);
 }
 
 void calc_velocity()
