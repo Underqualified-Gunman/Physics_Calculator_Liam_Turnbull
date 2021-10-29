@@ -73,6 +73,58 @@ void calc_velocity()
   cout << "\nYour Velocity is:"<< answer << " " << string1 << "/" << string2;
 }
 
+
+
+void calc_accelleration()
+{
+
+  // 
+  //accelleration= (FINAL_VELOCITY - INITAL_VELOCITY) divided by TIME 
+  //
+  //CALCULATES acceleration over interval
+  double iv, fv, t,answer;
+  string s1, s2;
+  cout << "\nEnter your measurement unit for velocity:";
+  validateString(s1);
+  cout <<"\nEnter your inital velocity:";
+  validateDouble(iv);
+  cout <<"\nEnter your final velocity:";
+  validateDouble(fv);
+  cout << "\nEnter your measurement unit for time:";
+  validateString(s2);
+  cout <<"\nEnter your time:";
+  validateDouble(t);
+  
+  answer = (fv-iv)/t;
+  cout << "your accelleration is" << answer << s1 << "/" << s2;
+}
+
+void calc_ns2ndlaw()
+{ // newtons law F= M*A
+  double m, a,answer;
+  string s1, s2;
+  cout << "\nEnter your measurement unit for mass:";
+  validateString(s1);
+  cout <<"\nEnter your mass:";
+  validateDouble(m);
+  cout << "\nEnter your measurement unit for acceleration:";
+  validateString(s2);
+  cout <<"\nEnter your acceleration:";
+  validateDouble(a);
+  
+  answer =m*a;
+  cout << "your force is " << answer << s1 << "/" << s2;
+}
+
+void calc_weight()
+{
+  
+}
+
+void calc_momentum()
+{
+  
+}
 void motion_submenu()
 {
 
@@ -90,40 +142,6 @@ void calc_motion_3()
   
 }
 void calc_motion_4()
-{
-  
-}
-
-
-void calc_accelleration()
-{
-  //CALCULATES acceleration over interval
-  double v,t,answer;
-  string string1, string2;
-  cout << "\nEnter your measurement unit for velocity:";
-  validateString(string1);
-  cout <<"\nenter your average velocity:";
-  validateDouble(v);
-  cout << "\nWhat measurement unit for time:";
-  validateString(string2);
-  cout <<"\nEnter your average time:";
-  validateDouble(t);
-  
-  answer = v/t;
-  cout << "your average accelleration is" << answer;
-}
-
-void calc_ns2ndlaw()
-{
-  
-}
-
-void calc_weight()
-{
-  
-}
-
-void calc_momentum()
 {
   
 }
@@ -158,49 +176,15 @@ bool input_catcher()
     calc_momentum();
   }
   else if(input == 9)
-  { 
-
+  {
     input = 0;
     cout << "Why?";
-
     return false;
-    
   }
   else
   { 
     cout << "\nError Incorrect Entry!";
     //cout << "\n input is" << input; debug
   } 
-
-
-
   return true;
 }
-
-
-/*
- bool loop = true;
-  int input;
-  do
-  {
-    cout << "\nenter a one or two :";
-    input = validateInt(input); 
-    if(input == 1)
-    {
-      cout << "\ncase 1";
-      loop = false;
-    }
-    else if(input == 2)
-    {
-      cout << "\n case 2";
-      loop = false;
-    }
-    else
-    {
-      cout << "\nerror case";
-    }
-    
-  } 
-  while(loop == true);
-  return 0;
-*/
