@@ -1,0 +1,288 @@
+
+
+
+
+
+
+
+
+
+plan/goals 
+  things to keep in mind through the whole program
+ validate all of the inputs for the program
+ add coloration for any input the user has entered
+
+1 greets user on program startup only once
+2 has a menu that gives the option to choose what to calculate
+
+menu mockup 
+1 velocity
+2 acceleration
+3 motion
+4 newton's second law
+5 weight(Earth)
+6 momentum
+9 Exit
+
+3 user get asked if they have any more calculations 
+4 clear the screen after user presses y/Y to continue or N/n to exit.
+5 have an input catcher method that will execute the various physics calculation functions.
+
+6 do while loops the above code if input_catcher returns false
+
+
+reference for color changing
+
+/*
+  cout << "\x1b[32;1mtestcase\x1b[0m \n";
+                ^  ^
+                V  S
+                a  e
+                l  t
+                u  t
+                e  i
+                   n
+                   g
+                   s
+*/
+
+
+
+
+
+// below is a reference of the class objectives
+
+For Max Points Possible, be sure to validate user input as per the techniques discussed in class, via the Validation Learning Module, or as per another manner. We never assume that the user will enter valid input, but test to make sure that the input is valid (data type, number/character range, etc.). I expect you to use the cleaner method for input validation like so rather than the standard cin >> object: Input_Validation_Ref_Functions_McMillan.zip  I 
+
+
+//Don’t forget to include your planning file in addition to code for submission.
+
+
+Rubric:
+
+Plan  10 points: Provide in your solution folder a Flowchart, pseudocode, photo of your hand-written plan, or type-written algorithm about how you plan to solve the below problem. 
+Filename: Unit1_Plan_YourLastName.docx/vsdx Remember Plan First, Then Code. That is, you may use any technique for planning that you like as long as you do so, and prove to me in this file that you did so. 
+
+Code 30 points: Zip (or online IDE Share URL) file of the entire solution Folder  including GitHub Share URL. 
+
+ 
+
+Task:
+
+      You have been tasked with creating a decision program menu to help students who are taking a Physics (Mechanics) class perform simple foundation calculations.
+
+Create a top level folder called Physics_Calculator_YourFirstName_YourLastName contained a CPP file called Physics_Calculator_YourFirstName_YourLastName.cpp (or main.cpp if using an online IDE like Repl.it) and all validation files.  
+
+ 
+
+Version Control and Git Hub Requirement: 
+Create a GitHub Account (if needed at)  https://github.com/ (Links to an external site.)
+
+The Repl.it IDE is recommended: https://replit.com/new/cpp (Links to an external site.)
+
+Using the "Version Control" button on the left in the Repl.it IDE, connect the current program to your GitHub Account 
+Save commit, and keep track of your project as you work on this homework 
+
+Note your GitHub URL as you will need to supply this to Dr_T with your code share link, for instance, this is my link:  https://github.com/drtmcmillanite (Links to an external site.)
+
+How to create a Repl.it Share URL for my grading and your submission in the "Comments" area, (see: https://www.dropbox.com/s/s5gmt9i57d3gkgg/DrTHowToCreateReplShareURLforGradingTCCE.mp4?dl=0 (Links to an external site.))
+
+Study- Dr_T's Hints on getting menu-driven program starting with functions: 
+
+https://repl.it/@TysonMcMillan/FunctionPracticeMcMillan (Links to an external site.)
+
+ 
+
+Create a menu whereby the following options are present:
+
+Velocity:
+
+velocity (Links to an external site.)
+
+v̅ = 
+
+Δs
+
+Δt
+
+v = 
+
+ds
+
+dt
+
+ 
+
+V = given input of ds and dt calculate the velocity
+
+“Ask the user for the unit of measure for ds and dt. “append those values to the answer” i.e. “km/hour”
+
+ 
+
+ 
+
+Dr_T Hints - Eat the Elephant one bite at a time:
+
+(not completing functioning code, but close) 
+
+Input:
+
+double ds; 
+
+string dsUnits;
+
+double dt;
+
+string dsUnits; 
+
+ 
+
+Process:
+
+double v  = ds / dt;
+
+ 
+
+Output:
+
+cout << v << dsUnits << "/" << dtUnits << endl; 
+
+ 
+
+Theme: Translating the input to the presentation of information to the user. 
+
+ 
+
+Acceleration:
+
+acceleration (Links to an external site.)
+
+a̅ = 
+
+Δv
+
+Δt
+
+a = 
+
+dv
+
+dt
+
+ 
+
+A = given input of dv and dt calculate the acceleration
+
+“Ask the user for the unit of measure for dv and dt. “append those values to the answer” i.e. “m/sec”
+
+ 
+
+Motion:
+
+For the motion formulas, I will be looking for all 4. Ask the user first if he/she would like to calculate motion, then complete a submenu within the menu for the user to choose options 1-4. 
+
+equations of motion (Links to an external site.)
+
+v = v0 + at
+s = s0 + v0t + ½at2
+v2 = v02 + 2a(s − s0)
+v̅ = ½(v + v0)
+
+            Ma = solve for v
+
+            Ms = solve for s
+
+            Mv2 = solve for v^2
+
+            Mv = solve for v_bar
+
+Newton’s Second Law:
+
+ 
+
+newton's 2nd law (Links to an external site.)
+
+∑F = ma
+
+∑F = 
+
+dp
+
+dt
+
+N = given input of m and a calculate N
+
+“Ask the user for the unit of measure for m and a. “append those values to the answer” i.e. N = kg m/s2
+
+ 
+
+Weight (Earth):
+
+weight (Links to an external site.)
+
+W = mg
+
+ 
+
+W = given input of m and g calculate W
+
+“Ask the user for the expected measure output. “append those values to the answer” i.e. lbs, stone
+
+ 
+
+Momentum:
+
+ 
+
+momentum (Links to an external site.)
+
+p = mv
+
+ 
+
+P = given input of m and v calculate P
+
+“Ask the user for the expected measure output. “append those values to the answer” i.e. [kg m/s]
+
+ 
+
+Additionally:
+
+Certainly, the use of functions is a much more efficient way to implement this work. Functions will be expected for max points.
+Echo to the user each time the values that he/she inputted and the result. Don't just show a result. Show the result in the context of the formula being used.
+Show the menu with each loop.
+Loop until E or e input.
+Test your program with multiple decisions, and multiple values. You might perhaps look for an online Calculator to test the accuracy of your information being presented. 
+Set the precision of the outputted numbers to 4 decimals places; hint iomanip library
+Add color to enhance the program. i.e. of the output results.
+Add option “clear” that enables Dr_T to clear the screen on-demand #include<stdtlib> system(“cls”);
+Can you prevent the user from breaking your program if they enter an alphabetical character instead of a number…? If not, your points will be reduced on this program. 
+Submitting for grading: 
+
+ 
+
+ 
+
+In the "written submission/comments" Provide Dr_T the Live URL share of
+
+1) Repl.it share URL  (see: https://www.dropbox.com/s/s5gmt9i57d3gkgg/DrTHowToCreateReplShareURLforGradingTCCE.mp4?dl=0 (Links to an external site.)) and (open in new window target = _blank) or
+
+2) the URL of your GitHub repository  (open in new window target = _blank)
+
+If using an IDE other than Repl.it, provide Dr_T with the zip file submission of your code.
+
+ 
+
+Or if Zipping, be sure to zip your entire top-level solution folder….
+
+ 
+
+ 
+
+Zip your entire top level folder (I need everything inside the solution folder to be in the zip file): 
+
+              Physics_Calculator_YourFirstName_YourLastName to create:  Physics_Calculator_YourFirstName_YourLastName.zip
+
+Browser your computer and Upload Physics_Calculator_YourFirstName_YourLastName.zip via the button below.
+
+ Assignment Instructions Written and Designed by Dr. Tyson McMillan
