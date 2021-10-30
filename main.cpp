@@ -158,7 +158,7 @@ void motion_submenu()
     << "\n* ^ is denotion that the following number is an exponent"
     << "\n1.   s = 1/2 (v+u) * t"
     << "\n2.   v = u + a * t"
-    << "\n3. v^2 = u^2 + 2*a*s"
+    << "\n3.  v2 = v02 + 2a(s − s0)"
     << "\n4.   s = ut + 1/2 *a*t^2"
     << "\n9. Return to Main Menu."
     ;
@@ -235,6 +235,8 @@ void calc_motion_1()
 
   vau =v + u;
   answer = one/two*vau*t;
+  // had to break this apart and store v and u in a seperate variable and it fixed this always returning 0 original reference below
+  //s = 1/2 (v+u) * t
   //displacement = 1/2 * (final velocity+ inital velocity) * time
 
   
@@ -262,33 +264,20 @@ void calc_motion_2()
 }
 void calc_motion_3()
 {
-  //v^2 = u^2 + 2*a*s
+  //v2 = v02 + 2a(s − s0)
   cout << "\nMotion Method 3 Executed";
-  double answer, u, v ,a, s, t;
-  string s1, s2;
-  cout << "\nEnter your Velocity Data Type E.G Meters:";
-  validateString(s1);
+  double answer, u, temp ,a, s, t;
   cout << "\nEnter initial velocity";
   validateDouble(u);
-  cout << "\nEnter final velocity";
-  validateDouble(v);
-  cout << "\nEnter your Time Data Type E.G seconds:";
-  validateString(s2); 
-  cout << "\nEnter time";
+  cout << "\nEnter the acceleration";
+  validateDouble(a);
+  cout << "\nEnter the speed";
   validateDouble(t);
-  //answer;
-  answer = pow(answer,2);
-
-//remember pemdas
-//parenthasies
-//exponents
-//multiply
-//divide
-//add
-//subtract
-
-
-
+  u = pow(u,2);
+  temp = u + 2*a*s;
+  answer = pow(temp,2);
+  cout << "\nThe final velocity calculates to " << answer;
+  // outputs as 0
 }
 void calc_motion_4()
 {
