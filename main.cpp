@@ -197,11 +197,10 @@ void motion_submenu()
 
 }
 /*the 4 types of motion to calculate
-v = v0 + at
-s = s0 + v0t + ½at2
-v2 = v02 + 2a(s − s0)
 v̅ = ½(v + v0)
-            
+v = v0 + at
+v2 = v02 + 2a(s − s0)
+s = s0 + v0t + ½at2          
             Ma = solve for v
 
             Ms = solve for s
@@ -209,29 +208,37 @@ v̅ = ½(v + v0)
             Mv2 = solve for v^2
 
             Mv = solve for v_bar
+s=1/2*(v+u)*t// only useable if v is constant
+v = u+at//ka
+v^2 = u^2+2as//ka
+s = ut + 1/2 at^2//ka
 */
 void calc_motion_1()
 { 
   // s = 1/2 (v+u) * t
   // todo fix this and find out why the result is always 0
   cout << "\nMotion Method 1 Executed";
-  double answer=0, u=0, v=0, t=0;
+  double answer=0, u=0, v=0, t=0, vau= 0;
   string s1, s2;
-  cout << "\n Enter your Velocity Data Type E.G Meters:";
+  const double one = 1.0, two = 2.0;
+  cout << "\nEnter your Velocity Data Type E.G Meters:";
   validateString(s1);
   cout << "\nEnter initial velocity";
   validateDouble(u);
   cout << "\nEnter final velocity";
   validateDouble(v);
-  cout << "\n Enter your Time Data Type E.G seconds:";
+  cout << "\nEnter your Time Data Type E.G seconds:";
   validateString(s2); 
   cout << "\nEnter time";
   validateDouble(t);
-  cout <<"debug spew"<< answer <<u<< v << t<< s1 << s2;
-  answer = 1/2*(v + u)*t;//todo fix this somehow always results in 0
+  cout <<"\ndebug spew"<< answer << u << v << t<< s1 << s2;
+
+  vau =v + u;
+  answer = one/two*vau*t;
+  //displacement = 1/2 * (final velocity+ inital velocity) * time
 
   
-  cout << "\nyour displacement is " << p <<" "<< s1<<"/"<<s2;
+  cout << "\nyour displacement is " << answer <<" "<< s1<<"/"<<s2;
 }
 void calc_motion_2()
 {
@@ -239,13 +246,13 @@ void calc_motion_2()
   cout << "\nMotion Method 2 Executed";
   double answer, u, v ,a, s, t;
   string s1, s2;
-  cout << "\n Enter your Velocity Data Type E.G Meters:";
+  cout << "\nEnter your Velocity Data Type E.G Meters:";
   validateString(s1);
   cout << "\nEnter initial velocity";
   validateDouble(u);
   cout << "\nEnter acceleration";
   validateDouble(a);
-  cout << "\n Enter your Time Data Type E.G seconds:";
+  cout << "\nEnter your Time Data Type E.G seconds:";
   validateString(s2); 
   cout << "\nEnter time";
   validateDouble(t);
@@ -259,16 +266,27 @@ void calc_motion_3()
   cout << "\nMotion Method 3 Executed";
   double answer, u, v ,a, s, t;
   string s1, s2;
-  cout << "\n Enter your Velocity Data Type E.G Meters:";
+  cout << "\nEnter your Velocity Data Type E.G Meters:";
   validateString(s1);
-  cout << "Enter initial velocity";
+  cout << "\nEnter initial velocity";
   validateDouble(u);
-  cout << "Enter final velocity";
+  cout << "\nEnter final velocity";
   validateDouble(v);
-  cout << "\n Enter your Time Data Type E.G seconds:";
+  cout << "\nEnter your Time Data Type E.G seconds:";
   validateString(s2); 
-  cout << "Enter time";
+  cout << "\nEnter time";
   validateDouble(t);
+  //answer;
+  answer = pow(answer,2);
+
+//remember pemdas
+//parenthasies
+//exponents
+//multiply
+//divide
+//add
+//subtract
+
 
 
 }
@@ -278,13 +296,13 @@ void calc_motion_4()
   cout << "\nMotion Method 4 Executed";
   double answer, u, v ,a, s, t;
   string s1, s2;
-  cout << "\n Enter your Velocity Data Type E.G Meters:";
+  cout << "\nEnter your Velocity Data Type E.G Meters:";
   validateString(s1);
-  cout << "Enter initial velocity";
+  cout << "\nEnter initial velocity";
   validateDouble(u);
-  cout << "Enter final velocity";
+  cout << "\nEnter final velocity";
   validateDouble(v);
-  cout << "\n Enter your Time Data Type E.G seconds:";
+  cout << "\nEnter your Time Data Type E.G seconds:";
   validateString(s2); 
   cout << "Enter time";
   validateDouble(t);
