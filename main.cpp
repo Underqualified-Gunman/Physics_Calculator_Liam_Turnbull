@@ -81,7 +81,8 @@ void calc_velocity()
   t = validateDouble(t);
   cout << "\nyou entered:" << t;
   answer = d/t; 
-  cout << "\nYour Velocity is:"<< setprecision(4)<< fixed << answer << " " << s1 << "/" << s2;
+  cout << "\nYour V="<< setprecision(4)<< fixed << answer << " " << s1 << "/" << s2;
+  cout << "\noperation "<<"\nV =" << d<< "/"<< t;
 }
 void calc_accelleration()
 {
@@ -107,7 +108,8 @@ void calc_accelleration()
   validateDouble(t);
   
   answer = (fv-iv)/t;
-  cout << "your accelleration is:"<<setprecision(4)<< fixed << answer<<" "<<s1<<"/"<< s2;
+  cout << "\na =:"<<setprecision(4)<< fixed << answer<<" "<<s1<<"/"<< s2;
+  cout << "\noperation "<<"\na =" <<"("<< fv<< "-"<< iv <<")" <<"/"<<t;
 }
 
 void calc_ns2ndlaw()
@@ -130,7 +132,9 @@ void calc_ns2ndlaw()
   cout << "\nyou entered:" << a;
   
   answer =m*a;
-  cout << "your force is " << setprecision(4)<< fixed << answer << s1 << "/" << s2;
+  cout << " f=" << setprecision(4)<< fixed << answer << s1 << "/" << s2;
+
+  cout << "\noperation "<<"\nf =" << m<< "*"<< a;
 }
 
 void calc_weight()
@@ -146,7 +150,8 @@ void calc_weight()
   validateDouble(m);
   cout << "\nyou entered:" << m;
   answer =m*g;
-  cout << "your force is:" << setprecision(4)<< fixed << answer << " "<< s1; 
+  cout << "w=" << setprecision(4)<< fixed << answer << " "<< s1; 
+  cout << "\noperation "<<"\nw =" << m << "*" << g;
 }
 void calc_momentum()
 {
@@ -168,7 +173,8 @@ void calc_momentum()
   cout << "\nyou entered:" << v;
   
   answer =m*v;
-  cout << "your force is:" << setprecision(4)<< fixed << answer << s1 << "/" << s2;
+  cout << "p=" << setprecision(4)<< fixed << answer << s1 << "/" << s2;
+  cout << "\noperation "<<"\np =" << m << "*" << v;
 }
 void motion_submenu()
 { 
@@ -247,7 +253,10 @@ void calc_motion_1()
   //s = 1/2 (v+u) * t
   //displacement = 1/2 * (final velocity+ inital velocity) * time
 
-  cout << "\nyour displacement is:" << setprecision(4)<< fixed << answer <<" "<< s1<<"/"<<s2;
+  cout << "\ns=" << setprecision(4)<< fixed << answer <<" "<< s1<<"/"<<s2;
+
+  cout << "\noperation "<<"\ns =" << "1.0/2.0*(" << v << "+"<< 
+  u << ")*"<< t;
 }
 void calc_motion_2()
 {
@@ -271,7 +280,9 @@ void calc_motion_2()
   validateDouble(t);
   cout << "\nyou entered:" << t;
   answer = u + a * t;
-  cout << "\nyour velocity is:" << setprecision(4)<< fixed << answer <<" "<< s1<<"/"<<s2;
+  cout << "\nv=" << setprecision(4)<< fixed << answer <<" "<< s1<<"/"<<s2;
+
+  cout << "\noperation "<<"\nv ="<<u<<"+"<<a<<"*"<< t;
 
 }
 void calc_motion_3()
@@ -289,10 +300,13 @@ void calc_motion_3()
   cout << "\nyou entered:" << u;
   cout << "\nEnter the acceleration:";
   validateDouble(a);
-cout << "\nyou entered:" << a;
+  cout << "\nyou entered:" << a;
+
   u = 2.0 * a * s;
   answer = sqrt(u);//square root was my issue for this.
-  cout << "\nthe final velocity is " << answer; //<< "^2";
+  cout << "\nv^2=" << answer; //<< "^2";
+  cout << "\noperation "<<"\nv^2= all of this gets squared --->u^2="<<"\n2.0 *"<<a<<"*"<<s;
+
 }
 void calc_motion_4()
 { 
@@ -312,7 +326,10 @@ void calc_motion_4()
   v =u + a * t;
   s=1.0/2.0*(v+u)*t;
   answer = s;
-  cout << "\nthe final displacement is:" << setprecision(4)<< fixed << answer;
+  cout << "\ns=" << setprecision(4)<< fixed << answer;
+
+  cout << "\noperation "<<"\nv ="<<u<<"+"<<a<<"*"<< t;
+  cout << "\noperation "<<"\ns ="<<1.0<<"/"<<2.0<<"*("<< v << "+" << u <<")*" << t;
 }
 bool input_catcher()
 { 
