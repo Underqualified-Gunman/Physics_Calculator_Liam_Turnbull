@@ -158,7 +158,7 @@ void motion_submenu()
     << "\n* ^ is denotion that the following number is an exponent"
     << "\n1.   s = 1/2 (v+u) * t"
     << "\n2.   v = u + a * t"
-    << "\n3.  v2 = v02 + 2a(s − s0)"
+    << "\n3.  v2 = v02 + 2as"
     << "\n4.   s = ut + 1/2 *a*t^2"
     << "\n9. Return to Main Menu."
     ;
@@ -263,44 +263,71 @@ void calc_motion_2()
 }
 void calc_motion_3()
 { 
-  double answer, u, temp ,a, s;
-  //v2 = v02 + 2a(s − s0)
-  cout << "\nMotion Method 3 Executed";
+  //v2 = v02 + 2a(displacement − inital displacment?)
+  //final velocity^2 = inital_velocity^2 + 2*acceleration*(displacement − inital displacement)
 
-  cout << "\nEnter initial velocity";
-  validateDouble(u);
-  cout << "\nEnter the acceleration";
-  validateDouble(a);
+
+
+  cout << "\nMotion Method 3 Executed";
+  double answer, u, a, s, temp;
   cout << "\nEnter the displacement";
   validateDouble(s);
-  
-  //answer = pow(u,2) + 2*a*s;
-  //v2=u2+2as
-  //v^2=u^2+2*a*s
-  temp  = pow(u,2)+2*a*s;
-  answer = pow(answer, 2);
-  cout << "\nThe final velocity calculates to " << answer;
-}
-void calc_motion_4()
-{
-  //s = u*t + 1/2 *a*t^2
-  cout << "\nMotion Method 4 Executed";
-  double answer, u, a, t;
-  string s1, s2;
-  cout << "\nEnter your Velocity Data Type E.G Meters:";
-  validateString(s1);
   cout << "\nEnter initial velocity";
   validateDouble(u);
   cout << "\nEnter the acceleration";
   validateDouble(a);
-  cout << "\nEnter your Time Data Type E.G seconds:";
-  validateString(s2); 
-  cout << "Enter the time";
-  validateDouble(t);
-  //s = u*t + 1/2 *a*t^2 //gets displacment
   //pemdas
-  answer = u*t + 1/2 *a*pow(t,2);
-  cout << "\n the displacement is " << answer;
+  //final velocity^2 = inital_velocity^2 + 2*acceleration*(displacement − inital displacement)
+  //v^2 = u^2 + 2as
+  /*mini code plan
+  get inital velcoity
+  get acceleration
+  get final position
+
+  u = inital velocity
+
+  */
+  //v^2 = u^2 + (2*a*s)
+  u = 2.0 * a * s;//
+  //v^2 = u^2 + temp
+  answer = sqrt(u);
+
+
+  cout << "\nthe final velocity is " << answer; //<< "^2";
+
+
+
+  //gets inital answer that then gets squared
+  //answer = pow(u,2) + 2 * a* s;
+  //answer = pow(answer,2);
+}
+void calc_motion_4()
+{ 
+  //s = s0 + v0t + ½at2   
+  cout << "\nMotion Method 4 Executed";
+  double answer, u, a,s;
+  cout << "\nEnter initial velocity";
+  validateDouble(u);
+  cout << "Enter the displacement";
+  validateDouble(s);
+  cout << "\nEnter the acceleration";
+  validateDouble(a);
+  //v2 = v02 + 2a(displacement − inital displacment)
+  //pemdas
+  //final velocity^2 = inital_velocity^2 + 2*acceleration*(displacement − inital displacement)
+  //gets inital answer that then gets squared
+  answer = pow(u,2) + 2 * a* s;
+  //answer = pow(answer,2);
+
+
+
+
+
+
+
+
+  
+  cout << "\n the final velocity is " << answer << "^2";
 }
 bool input_catcher()
 { 
