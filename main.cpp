@@ -61,58 +61,58 @@ void display_menu()
 void calc_velocity()
 {
   double d, t,answer;
-  string s1, s2;
+  char s1, s2;
   cout << "\n Velocity";
   cout << "\nEnter your measurement unit for displacment:";
-  validateString(s1);
+  validateChar(s1);
   cout << "\nWhat's the displacement?:";
   d = validateDouble(d);
   cout << "\nEnter your measurement unit for time:";
-  validateString(s2);
+  validateChar(s2);
   cout << "\nWhats the amount of time?:";
   t = validateDouble(t);
   answer = d/t; 
-  cout << "\nYour Velocity is:"<< answer << " " << s1 << "/" << s2;
+  cout << "\nYour Velocity is:"<< setprecision(4)<< fixed << answer << " " << s1 << "/" << s2;
 }
 void calc_accelleration()
 {
   //accelleration= (FINAL_VELOCITY - INITAL_VELOCITY) divided by TIME 
   //CALCULATES acceleration over interval
   double iv, fv, t,answer;
-  string s1, s2;
+  char s1, s2;
   cout << "\n Acceleration";
   cout << "\nEnter your measurement unit for velocity:";
-  validateString(s1);
+  validateChar(s1);
   cout <<"\nEnter your inital velocity:";
   validateDouble(iv);
   cout <<"\nEnter your final velocity:";
   validateDouble(fv);
   cout << "\nEnter your measurement unit for time:";
-  validateString(s2);
+  validateChar(s2);
   cout <<"\nEnter your time:";
   validateDouble(t);
   
   answer = (fv-iv)/t;
-  cout << "your accelleration is "<<answer<<" "<<s1<<"/"<< s2;
+  cout << "your accelleration is "<<setprecision(4)<< fixed << answer<<" "<<s1<<"/"<< s2;
 }
 
 void calc_ns2ndlaw()
 { 
   // newtons law F= M*A
   double m, a,answer;
-  string s1, s2;
+  char s1, s2;
   cout << "\n Newtons Second Law";
   cout << "\nEnter your measurement unit for mass:";
-  validateString(s1);
+  validateChar(s1);
   cout <<"\nEnter your mass:";
   validateDouble(m);
   cout << "\nEnter your measurement unit for acceleration:";
-  validateString(s2);
+  validateChar(s2);
   cout <<"\nEnter your acceleration:";
   validateDouble(a);
   
   answer =m*a;
-  cout << "your force is " << answer << s1 << "/" << s2;
+  cout << "your force is " << setprecision(4)<< fixed << answer << s1 << "/" << s2;
 }
 
 void calc_weight()
@@ -120,31 +120,31 @@ void calc_weight()
    double m,answer;
    const double g = 9.8;//this is the gravitational constant of earth
   cout << "\nthis program assumes you are calculating weight on earth";
-  string s1;
+  char s1;
   cout << "\nEnter your measurement output:";
-  validateString(s1);
+  validateChar(s1);
   cout <<"\nEnter your mass:";
   validateDouble(m);
   answer =m*g;
-  cout << "your force is " << answer << " "<< s1; 
+  cout << "your force is " << setprecision(4)<< fixed << answer << " "<< s1; 
 }
 void calc_momentum()
 {
   //p=m*v momentum calculkation
   double m, v,answer;
-  string s1, s2;
+  char s1, s2;
   cout << "\n Momentum";
   cout << "\nEnter your measurement unit for mass:";
-  validateString(s1);
+  validateChar(s1);
   cout <<"\nEnter your mass:";
   validateDouble(m);
   cout << "\nEnter your measurement unit for velocity:";
-  validateString(s2);
+  validateChar(s2);
   cout <<"\nEnter your acceleration:";
   validateDouble(v);
   
   answer =m*v;
-  cout << "your force is " << answer << s1 << "/" << s2;
+  cout << "your force is " << setprecision(4)<< fixed << answer << s1 << "/" << s2;
 }
 void motion_submenu()
 { 
@@ -218,19 +218,19 @@ void calc_motion_1()
   // s = 1/2 (v+u) * t
   cout << "\nMotion Method 1 Executed";
   double answer=0, u=0, v=0, t=0, vau= 0;
-  string s1, s2;
+  char s1, s2;
   const double one = 1.0, two = 2.0;
   cout << "\nEnter your Velocity Data Type E.G Meters:";
-  validateString(s1);
+  validateChar(s1);
   cout << "\nEnter initial velocity";
   validateDouble(u);
   cout << "\nEnter final velocity";
   validateDouble(v);
   cout << "\nEnter your Time Data Type E.G seconds:";
-  validateString(s2); 
+  validateChar(s2); 
   cout << "\nEnter time";
   validateDouble(t);
-  cout <<"\ndebug spew"<< answer << u << v << t<< s1 << s2;
+  cout <<"\ndebug spew"<< setprecision(4)<< fixed << answer << u << v << t<< s1 << s2;
 
   vau =v + u;
   answer = one/two*vau*t;
@@ -239,26 +239,26 @@ void calc_motion_1()
   //displacement = 1/2 * (final velocity+ inital velocity) * time
 
   
-  cout << "\nyour displacement is " << answer <<" "<< s1<<"/"<<s2;
+  cout << "\nyour displacement is " << setprecision(4)<< fixed << answer <<" "<< s1<<"/"<<s2;
 }
 void calc_motion_2()
 {
   //v = u + a * t
   cout << "\nMotion Method 2 Executed";
   double answer, u, v ,a, s, t;
-  string s1, s2;
+  char s1, s2;
   cout << "\nEnter your Velocity Data Type E.G Meters:";
-  validateString(s1);
+  validateChar(s1);
   cout << "\nEnter initial velocity";
   validateDouble(u);
   cout << "\nEnter acceleration";
   validateDouble(a);
   cout << "\nEnter your Time Data Type E.G seconds:";
-  validateString(s2); 
+  validateChar(s2); 
   cout << "\nEnter time";
   validateDouble(t);
   answer = u + a * t;
-  cout << "\nyour velocity is " << answer <<" "<< s1<<"/"<<s2;
+  cout << "\nyour velocity is " << setprecision(4)<< fixed << answer <<" "<< s1<<"/"<<s2;
 
 }
 void calc_motion_3()
@@ -294,7 +294,7 @@ void calc_motion_4()
   v =u + a * t;
   s=1.0/2.0*(v+u)*t;
   answer = s;
-  cout << "\nthe final displacement is " << answer;
+  cout << "\nthe final displacement is " << setprecision(4)<< fixed << answer;
 }
 bool input_catcher()
 { 
