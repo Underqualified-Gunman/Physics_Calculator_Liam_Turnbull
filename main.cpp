@@ -216,7 +216,6 @@ s = ut + 1/2 at^2//ka
 void calc_motion_1()
 { 
   // s = 1/2 (v+u) * t
-  // todo fix this and find out why the result is always 0
   cout << "\nMotion Method 1 Executed";
   double answer=0, u=0, v=0, t=0, vau= 0;
   string s1, s2;
@@ -263,41 +262,45 @@ void calc_motion_2()
 
 }
 void calc_motion_3()
-{
+{ 
+  double answer, u, temp ,a, s;
   //v2 = v02 + 2a(s − s0)
   cout << "\nMotion Method 3 Executed";
-  double answer, u, temp ,a, s, t;
+
   cout << "\nEnter initial velocity";
   validateDouble(u);
   cout << "\nEnter the acceleration";
   validateDouble(a);
-  cout << "\nEnter the speed";
-  validateDouble(t);
-  u = pow(u,2);
-  temp = u + 2*a*s;
-  answer = pow(temp,2);
+  cout << "\nEnter the displacement";
+  validateDouble(s);
+  
+  //answer = pow(u,2) + 2*a*s;
+  //v2=u2+2as
+  //v^2=u^2+2*a*s
+  temp  = pow(u,2)+2*a*s;
+  answer = pow(answer, 2);
   cout << "\nThe final velocity calculates to " << answer;
-  // outputs as 0
 }
 void calc_motion_4()
 {
   //s = u*t + 1/2 *a*t^2
   cout << "\nMotion Method 4 Executed";
-  double answer, u, v ,a, s, t;
+  double answer, u, a, t;
   string s1, s2;
   cout << "\nEnter your Velocity Data Type E.G Meters:";
   validateString(s1);
   cout << "\nEnter initial velocity";
   validateDouble(u);
-  cout << "\nEnter final velocity";
-  validateDouble(v);
+  cout << "\nEnter the acceleration";
+  validateDouble(a);
   cout << "\nEnter your Time Data Type E.G seconds:";
   validateString(s2); 
-  cout << "Enter time";
+  cout << "Enter the time";
   validateDouble(t);
-
-
-
+  //s = u*t + 1/2 *a*t^2 //gets displacment
+  //pemdas
+  answer = u*t + 1/2 *a*pow(t,2);
+  cout << "\n the displacement is " << answer;
 }
 bool input_catcher()
 { 
