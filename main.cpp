@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 #include "Input_Validation_Extended.h"
 using namespace std;
 
@@ -214,7 +215,49 @@ void calc_motion_1()
   // s = 1/2 (v+u) * t
   // todo fix this and find out why the result is always 0
   cout << "\nMotion Method 1 Executed";
-  double p=0, u=0, v=0, t=0;
+  double answer=0, u=0, v=0, t=0;
+  string s1, s2;
+  cout << "\n Enter your Velocity Data Type E.G Meters:";
+  validateString(s1);
+  cout << "\nEnter initial velocity";
+  validateDouble(u);
+  cout << "\nEnter final velocity";
+  validateDouble(v);
+  cout << "\n Enter your Time Data Type E.G seconds:";
+  validateString(s2); 
+  cout << "\nEnter time";
+  validateDouble(t);
+  cout <<"debug spew"<< answer <<u<< v << t<< s1 << s2;
+  answer = 1/2*(v + u)*t;//todo fix this somehow always results in 0
+
+  
+  cout << "\nyour displacement is " << p <<" "<< s1<<"/"<<s2;
+}
+void calc_motion_2()
+{
+  //v = u + a * t
+  cout << "\nMotion Method 2 Executed";
+  double answer, u, v ,a, s, t;
+  string s1, s2;
+  cout << "\n Enter your Velocity Data Type E.G Meters:";
+  validateString(s1);
+  cout << "\nEnter initial velocity";
+  validateDouble(u);
+  cout << "\nEnter acceleration";
+  validateDouble(a);
+  cout << "\n Enter your Time Data Type E.G seconds:";
+  validateString(s2); 
+  cout << "\nEnter time";
+  validateDouble(t);
+  answer = u + a * t;
+  cout << "\nyour velocity is " << answer <<" "<< s1<<"/"<<s2;
+
+}
+void calc_motion_3()
+{
+  //v^2 = u^2 + 2*a*s
+  cout << "\nMotion Method 3 Executed";
+  double answer, u, v ,a, s, t;
   string s1, s2;
   cout << "\n Enter your Velocity Data Type E.G Meters:";
   validateString(s1);
@@ -226,27 +269,6 @@ void calc_motion_1()
   validateString(s2); 
   cout << "Enter time";
   validateDouble(t);
-  cout <<"debug spew"<< p <<u<< v << t<< s1 << s2;
-  p = 1/2*(v + u)*t;//todo fix this somehow always results in 0
-
-  
-  cout << "\nyour displacement is " << p <<" "<< s1<<"/"<<s2;
-}
-void calc_motion_2()
-{
-  //v = u + a * t
-  cout << "\nMotion Method 2 Executed";
-  double answer, u, v ,a, s, t;
-
-
-
-}
-void calc_motion_3()
-{
-  //v^2 = u^2 + 2*a*s
-  cout << "\nMotion Method 3 Executed";
-  double answer, u, v ,a, s, t;
-
 
 
 }
@@ -255,7 +277,17 @@ void calc_motion_4()
   //s = u*t + 1/2 *a*t^2
   cout << "\nMotion Method 4 Executed";
   double answer, u, v ,a, s, t;
-
+  string s1, s2;
+  cout << "\n Enter your Velocity Data Type E.G Meters:";
+  validateString(s1);
+  cout << "Enter initial velocity";
+  validateDouble(u);
+  cout << "Enter final velocity";
+  validateDouble(v);
+  cout << "\n Enter your Time Data Type E.G seconds:";
+  validateString(s2); 
+  cout << "Enter time";
+  validateDouble(t);
 
 
 
