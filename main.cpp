@@ -197,10 +197,10 @@ void motion_submenu()
 
 }
 /*the 4 types of motion to calculate
-v̅ = ½(v + v0)
-v = v0 + at
-v2 = v02 + 2a(s − s0)
-s = s0 + v0t + ½at2          
+v̅ = ½(v + u)
+v = u + at
+v2 = u2 + 2a(s − s0)
+s = s0 + ut + ½ (a*t)^2          
             Ma = solve for v
 
             Ms = solve for s
@@ -265,69 +265,36 @@ void calc_motion_3()
 { 
   //v2 = v02 + 2a(displacement − inital displacment?)
   //final velocity^2 = inital_velocity^2 + 2*acceleration*(displacement − inital displacement)
-
-
-
+  // input menu code
   cout << "\nMotion Method 3 Executed";
-  double answer, u, a, s, temp;
+  double answer, u, a, s;
   cout << "\nEnter the displacement";
   validateDouble(s);
   cout << "\nEnter initial velocity";
   validateDouble(u);
   cout << "\nEnter the acceleration";
   validateDouble(a);
-  //pemdas
-  //final velocity^2 = inital_velocity^2 + 2*acceleration*(displacement − inital displacement)
-  //v^2 = u^2 + 2as
-  /*mini code plan
-  get inital velcoity
-  get acceleration
-  get final position
 
-  u = inital velocity
-
-  */
-  //v^2 = u^2 + (2*a*s)
-  u = 2.0 * a * s;//
-  //v^2 = u^2 + temp
-  answer = sqrt(u);
-
-
+  u = 2.0 * a * s;
+  answer = sqrt(u);//square root was my issue for this.
   cout << "\nthe final velocity is " << answer; //<< "^2";
-
-
-
-  //gets inital answer that then gets squared
-  //answer = pow(u,2) + 2 * a* s;
-  //answer = pow(answer,2);
 }
 void calc_motion_4()
 { 
   //s = s0 + v0t + ½at2   
   cout << "\nMotion Method 4 Executed";
-  double answer, u, a,s;
+  double answer, s, u, v, a, t;
   cout << "\nEnter initial velocity";
   validateDouble(u);
-  cout << "Enter the displacement";
-  validateDouble(s);
-  cout << "\nEnter the acceleration";
+  cout << "Enter the acceleration";
   validateDouble(a);
-  //v2 = v02 + 2a(displacement − inital displacment)
-  //pemdas
-  //final velocity^2 = inital_velocity^2 + 2*acceleration*(displacement − inital displacement)
-  //gets inital answer that then gets squared
-  answer = pow(u,2) + 2 * a* s;
-  //answer = pow(answer,2);
+  cout << "\nEnter the time";
+  validateDouble(t);
 
-
-
-
-
-
-
-
-  
-  cout << "\n the final velocity is " << answer << "^2";
+  v =u + a * t;
+  s=1.0/2.0*(v+u)*t;
+  answer = s;
+  cout << "\nthe final displacement is " << answer;
 }
 bool input_catcher()
 { 
