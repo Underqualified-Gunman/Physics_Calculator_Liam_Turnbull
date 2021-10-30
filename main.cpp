@@ -18,7 +18,6 @@ void calc_weight();
 void calc_momentum();
 bool input_catcher();
 /*
-Don't just show a result. Show the result in the context of the formula being used.
 Loop until E or e input.
 Add color to enhance the program. i.e. of the output results.
 Add option “clear” that enables Dr_T to clear the screen on-demand #include<stdtlib> system(“cls”);
