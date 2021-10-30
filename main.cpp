@@ -43,6 +43,7 @@ int main()
 void display_menu()
 {
   cout 
+  << "\n"
   << "\nWhat would you like to calculate?" 
   << "\n1. Calculate Velocity"
   << "\n2. Calculate Motion"
@@ -60,6 +61,7 @@ void calc_velocity()
 {
   double d, t,answer;
   string s1, s2;
+  cout << "\n Velocity";
   cout << "\nEnter your measurement unit for displacment:";
   validateString(s1);
   cout << "\nWhat's the displacement?:";
@@ -77,6 +79,7 @@ void calc_accelleration()
   //CALCULATES acceleration over interval
   double iv, fv, t,answer;
   string s1, s2;
+  cout << "\n Acceleration";
   cout << "\nEnter your measurement unit for velocity:";
   validateString(s1);
   cout <<"\nEnter your inital velocity:";
@@ -89,13 +92,15 @@ void calc_accelleration()
   validateDouble(t);
   
   answer = (fv-iv)/t;
-  cout << "your accelleration is" << answer << s1 << "/" << s2;
+  cout << "your accelleration is "<<answer<<" "<<s1<<"/"<< s2;
 }
 
 void calc_ns2ndlaw()
-{ // newtons law F= M*A
+{ 
+  // newtons law F= M*A
   double m, a,answer;
   string s1, s2;
+  cout << "\n Newtons Second Law";
   cout << "\nEnter your measurement unit for mass:";
   validateString(s1);
   cout <<"\nEnter your mass:";
@@ -125,30 +130,135 @@ void calc_weight()
 void calc_momentum()
 {
   //p=m*v momentum calculkation
-
-
-
+  double m, v,answer;
+  string s1, s2;
+  cout << "\n Momentum";
+  cout << "\nEnter your measurement unit for mass:";
+  validateString(s1);
+  cout <<"\nEnter your mass:";
+  validateDouble(m);
+  cout << "\nEnter your measurement unit for velocity:";
+  validateString(s2);
+  cout <<"\nEnter your acceleration:";
+  validateDouble(v);
   
+  answer =m*v;
+  cout << "your force is " << answer << s1 << "/" << s2;
 }
 void motion_submenu()
-{
+{ 
+  int input;
+  bool loop=true;
+  //loops the input checking logic until 1-4 is entered then it sets loop to false and makes it go back to the original menu
+  do
+  {
+    cout //u v a s t
+    << "\nMomentum Select 1 of 4 Options"
+    << "\n* ^ is denotion that the following number is an exponent"
+    << "\n1.   s = 1/2 (v+u) * t"
+    << "\n2.   v = u + a * t"
+    << "\n3. v^2 = u^2 + 2*a*s"
+    << "\n4.   s = ut + 1/2 *a*t^2"
+    << "\n9. Return to Main Menu."
+    ;
+    validateInt(input);
+    if(input ==1)
+    {
+      calc_motion_1();
+      loop = false;
+    }
+    else if(input ==2)
+    {
+      calc_motion_2();
+      loop = false;
+    }
+    else if(input ==3)
+    {
+      calc_motion_3();
+      loop = false;
+    }
+    else if(input ==4)
+    {
+      calc_motion_4();   
+      loop = false;
+    }
+    else if(input ==9)
+    {
+      break;// now i realise i could have just write this vs loop=true and such with bools
+    }
+    else
+    {
+      cout << "\n Error Invalid input!";
+    }
+  }while(loop==true);
+
+
 
 }
+/*the 4 types of motion to calculate
+v = v0 + at
+s = s0 + v0t + ½at2
+v2 = v02 + 2a(s − s0)
+v̅ = ½(v + v0)
+            
+            Ma = solve for v
+
+            Ms = solve for s
+
+            Mv2 = solve for v^2
+
+            Mv = solve for v_bar
+*/
 void calc_motion_1()
-{
+{ 
+  // s = 1/2 (v+u) * t
+  // todo fix this and find out why the result is always 0
+  cout << "\nMotion Method 1 Executed";
+  double p=0, u=0, v=0, t=0;
+  string s1, s2;
+  cout << "\n Enter your Velocity Data Type E.G Meters:";
+  validateString(s1);
+  cout << "Enter initial velocity";
+  validateDouble(u);
+  cout << "Enter final velocity";
+  validateDouble(v);
+  cout << "\n Enter your Time Data Type E.G seconds:";
+  validateString(s2); 
+  cout << "Enter time";
+  validateDouble(t);
+  cout <<"debug spew"<< p <<u<< v << t<< s1 << s2;
+  p = 1/2*(v + u)*t;//todo fix this somehow always results in 0
+
   
+  cout << "\nyour displacement is " << p <<" "<< s1<<"/"<<s2;
 }
 void calc_motion_2()
 {
-  
+  //v = u + a * t
+  cout << "\nMotion Method 2 Executed";
+  double answer, u, v ,a, s, t;
+
+
+
 }
 void calc_motion_3()
 {
-  
+  //v^2 = u^2 + 2*a*s
+  cout << "\nMotion Method 3 Executed";
+  double answer, u, v ,a, s, t;
+
+
+
 }
 void calc_motion_4()
 {
-  
+  //s = u*t + 1/2 *a*t^2
+  cout << "\nMotion Method 4 Executed";
+  double answer, u, v ,a, s, t;
+
+
+
+
 }
 bool input_catcher()
 { 

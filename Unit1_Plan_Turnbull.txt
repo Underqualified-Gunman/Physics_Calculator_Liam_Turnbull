@@ -19,6 +19,8 @@ menu mockup
 1 velocity
 2 acceleration
 3 motion
+motion gets a submenu
+
 4 newton's second law
 5 weight(Earth)
 6 momentum
