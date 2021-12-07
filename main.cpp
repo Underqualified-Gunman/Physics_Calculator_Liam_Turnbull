@@ -1,3 +1,12 @@
+// started october 20th 2021
+// created by liam turnbull
+// Input_Validation_Extended by drT
+// created as a class assignemnt for Tyson mcmillan at tarrant county community college
+// this assigment was to create a physics calculator
+// and was intended to build familiatrity with menu systems
+// gained experiance on how to convert physics calculations to C++
+// also gained some familiarity with color coding the programs text output
+//
 #include <iostream>
 #include <iomanip>
 #include <cmath>
